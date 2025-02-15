@@ -34,7 +34,8 @@ contract VotingTest is Test {
         
         uint voteCount;
         // Retrieve candidate 1 and check the vote count
-        ( , ,voteCount) = voting.getCandidate(1);
+        Voting.Candidate memory candidate = voting.getCandidate(1); 
+        voteCount = candidate.voteCount; 
         assertEq(voteCount, 1);
     }
 
